@@ -1109,7 +1109,7 @@
         Rl=S(t/6)/4, Pt=-.25-S(t*1.5)*.5, Yw = C(t/4)*8
 
         if(latlongsLoaded && !((t*60|0)%(60+C(t/3)*40|0))){
-          if(typeof latLongObjs == 'undefined') latLongObjs = loadLatLongObjs(ls___, 350)
+          if(typeof latLongObjs == 'undefined') latLongObjs = loadLatLongObjs(ls___, 150)
           curtex++
           obj = latLongObjs[curtex%latlongImgs.length]
         }
