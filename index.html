@@ -1100,17 +1100,19 @@
             })
           }
           
-          toggle = curtex = 0
+          toggle = false
+          curtex = 9
+          if(location.indexOf('env=')!=-1) curtex = +location.split('env=')[1].split('&')[0]
           x.fillRect(0,0,c.width=1920/4,c.height=1080/4)
         }
-        
+
         ls___ = 1e6
-        oX=0, oY=0, oZ=Math.min(ls___/1.5, Math.max(ls___/10, (.3-S(t/5))*ls___*10))
-        Rl=S(t/6)/4, Pt=-.25-S(t*1.5)*.5, Yw = C(t/4)*8
+        oX=0, oY=0, oZ=ls___/10//Math.min(ls___/1.5, Math.max(ls___/10, (.3-S(t/5))*ls___*10))
+        Rl=S(t/6)/4, Pt=-.3-S(t/2), Yw = -t/4
 
         if(latlongsLoaded && !((t*60|0)%(60+C(t/3)*40|0))){
           if(typeof latLongObjs == 'undefined') latLongObjs = loadLatLongObjs(ls___, 200)
-          curtex++
+          //curtex++
           obj = latLongObjs[curtex%latlongImgs.length]
         }
 
@@ -1135,9 +1137,9 @@
 
           if(1) ST.map(v=>{
             X = v[0]
-            Y = v[1] += iSTG/250
+            Y = v[1] += iSTG/350
             Z = v[2]
-            R(0,0,C(t)*.03)
+            R(0,0,C(t)*.025)
             v[0] = X
             v[1] = Y
             v[2] = Z
